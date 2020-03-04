@@ -1,6 +1,6 @@
 # 🙈 🙉 🙊 Fullscreen Overlay Navigation Bootstrap 4
 
-## 😃 Click here for the 👉 [💥LIVE DEMO](https://frontendfunn.github.io/javascript-rotating-clock/)
+## 😃 Click here for the 👉 [💥LIVE DEMO](https://frontendfunn.github.io/fullscreen-overlay-navigation-menu/)
 
 ---
 
