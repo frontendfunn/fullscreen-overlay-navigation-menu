@@ -1,0 +1,72 @@
+@function rem($value) {
+  @return unquote(($value/1px)/16+'rem');
+}
+$materialColors: (
+  red: #c62828,
+  pink: #ad1457,
+  purple: #6a1b9a,
+  indigo: #283593,
+  blue: #1565c0,
+  cyan: #00838f,
+  green: #2e7d32,
+  orange: #d84315
+);
+
+@each $colorName, $colorValue in $materialColors {
+  .text-#{$colorName} {
+    color: #{$colorValue};
+  }
+  .text-#{$colorName}-lighter {
+    color: lighten($colorValue, 30%);
+  }
+  .bg-#{$colorName} {
+    background-color: #{$colorValue};
+  }
+  a.text-#{$colorName}-lighter {
+    &:hover {
+      color: lighten($colorValue, 50%);
+    }
+  }
+}
+
+.menuContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 56px;
+  z-index: 4;
+  visibility: hidden;
+  transform: scale(0);
+  &.active {
+    visibility: visible;
+    transform: scale(1);
+    .linkWrap {
+      transform: scale(1);
+      transition: all ease 0.25s;
+      min-height: rem(200px);
+      @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+          transition-delay: #{random(8) * 0.05s};
+        }
+      }
+    }
+  }
+}
+
+.linkWrap {
+  transform: scale(0);
+}
+
+.link {
+  .icon {
+    height: 80px;
+    width: 80px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+  }
+}
